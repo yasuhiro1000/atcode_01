@@ -1,0 +1,34 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args){
+        Scanner sca = new Scanner(System.in);
+        int N = sca.nextInt();
+        int[] Narray  =new int[N];
+        int Alice = 0;
+        int bob = 0;
+        for(int i=0;i<N;i++){
+            int input_A = sca.nextInt();
+            Narray[i] = input_A;
+        }
+        System.out.println(Arrays.toString(Narray));        
+        Arrays.sort(Narray);
+        System.out.println(Arrays.toString(Narray));
+        if (N%2==0){
+            for (int i =0;i<N;i++){
+                if (i%2==1){
+                    Alice = Alice+Narray[i];
+                }   else {
+                    bob = bob + Narray[i];
+                }
+            }
+        }else{
+            for (int t=0;t<N;t++){
+                if (t%2==0){
+                    Alice = Alice + Narray[t];
+                }   else {
+                    bob = bob + Narray[t];
+                }
+            }
+        }
+     System.out.println(Alice-bob);
+    }}
